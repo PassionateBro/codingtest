@@ -1,38 +1,17 @@
 package com.test;
 
+import cn.hutool.core.date.DateUtil;
+
 import java.io.IOException;
+
 
 public class TestMain {
     static volatile boolean flag = true;
 
     public static void main(String[] args) throws IOException {
-//        ServerSocketChannel ssc = ServerSocketChannel.open();
-//        Selector sel = Selector.open();
-//        ssc.configureBlocking(false);
-//        ssc.socket().bind(new InetSocketAddress(8080));
-//        SelectionKey key = ssc.register(sel, SelectionKey.OP_ACCEPT);
-//        SocketChannel ch = null;
-//        while(true) {
-//            sel.select();
-//            Iterator it = sel.selectedKeys().iterator();
-//            while(it.hasNext()) {
-//                SelectionKey skey = (SelectionKey)it.next();
-//                it.remove();
-//                if(skey.isAcceptable()) {
-//                    ch = ssc.accept();
-//                }
-//            }
-//
+        String s = "10:00:00";
+        System.out.println(DateUtil.parse(s));
 
-//        ExecutorService executorService = Executors.newCachedThreadPool();
-//        executorService.submit(new Task() {
-//        });
-//        Timer timer = new Timer();
-        String s = "https://www.cnblogs.com/niunafei/p/13274749.html";
-        System.out.println(s.hashCode() % 1000);
-
-        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        Class<?>[] classes = {New.class};
     }
 
     static class Task implements Runnable {
