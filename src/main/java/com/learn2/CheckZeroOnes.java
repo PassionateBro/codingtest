@@ -35,8 +35,4 @@ public class CheckZeroOnes {
         return one > zero;
     }
 
-    public static void main(String[] args) {
-        checkZeroOnes("111000");
-        System.out.println(DateUtil.thisDayOfWeek());
-    }
 }

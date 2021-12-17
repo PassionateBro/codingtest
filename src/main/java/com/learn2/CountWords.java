@@ -38,8 +38,4 @@ public class CountWords {
         return count.size();
     }
 
-    public static void main(String[] args) {
-//        countWords(new String[]{"leetcode", "is", "amazing", "as", "is"}, new String[]{"amazing", "leetcode", "is"});
-        System.out.println((int)'Z');
-    }
 }

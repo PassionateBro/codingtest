@@ -43,7 +43,4 @@ public class BuddyStrings {
         return idx == 0;
     }
 
-    public static void main(String[] args) {
-        buddyStrings("ab", "ba");
-    }
 }

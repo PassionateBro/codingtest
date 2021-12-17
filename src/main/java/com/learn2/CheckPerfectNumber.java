@@ -24,7 +24,4 @@ public class CheckPerfectNumber {
         return num == sum;
     }
 
-    public static void main(String[] args) {
-        checkPerfectNumber(28);
-    }
 }
