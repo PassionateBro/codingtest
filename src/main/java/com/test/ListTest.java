@@ -34,5 +34,9 @@ public class ListTest {
     public static void main(String[] args) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         HashSet<String> set = new HashSet<>();
         set.add("1234");
+        String a = "";
+        char[] chars = a.toCharArray();
+        ListTest listTest = new ListTest();
+        listTest.setId(1);
     }
 }

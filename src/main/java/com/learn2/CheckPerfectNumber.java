@@ -9,16 +9,12 @@ import java.util.HashSet;
  */
 public class CheckPerfectNumber {
     public static boolean checkPerfectNumber(int num) {
-        if (num <=1) return false;
-        HashSet<Integer> set = new HashSet<>();
+        if (num <= 1) return false;
         int sum = 1;
-        for (int i = 2; i <= num / 2; i++) {
+        for (int i = 2, x = (int) Math.sqrt(num); i <= x; i++) {
             if (num % i == 0) {
                 int temp = num / i;
-                if (set.contains(temp)) break;
                 sum += i + temp;
-                set.add(i);
-                set.add(temp);
             }
         }
         return num == sum;
