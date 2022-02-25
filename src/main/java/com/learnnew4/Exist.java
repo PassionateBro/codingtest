@@ -17,6 +17,7 @@ public class Exist {
                 if (dfs(board, words, 0, i, j, visited)) {
                     return true;
                 }
+                visited[i][j] = 0;
             }
         }
         return false;
