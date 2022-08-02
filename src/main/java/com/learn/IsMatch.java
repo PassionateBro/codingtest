@@ -30,6 +30,6 @@ public class IsMatch {
 //        System.out.println(isMatch("aa", "*"));
 //        System.out.println(isMatch("adceb", "a*b"));
 //        System.out.println(isMatch("acdcb", "a*c?b"));
-        System.out.println(isMatch("", "***"));
+        System.out.println(isMatch("ab", ".*"));
     }
 }

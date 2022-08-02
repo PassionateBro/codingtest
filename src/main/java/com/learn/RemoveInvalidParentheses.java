@@ -8,50 +8,52 @@ import java.util.*;
  * @Date: 2021-10-27 9:27
  */
 public class RemoveInvalidParentheses {
-    int sum;
-    int len;
-    Set<String> list = new HashSet<String>();
-    int ans;
 
     public List<String> removeInvalidParentheses(String s) {
-        Deque<Character> deque = new LinkedList<>();
-        sum = s.length();
-        len = s.length();
-        int cnt = 0;
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == '(') {
-                deque.addFirst('(');
-            } else if (s.charAt(i) == ')') {
-                if (!deque.isEmpty()) {
-                    deque.removeFirst();
-                } else sum--;
-            } else cnt++;
+        List<String> ans = new ArrayList<String>();
+        Set<String> currSet = new HashSet<String>();
+
+        currSet.add(s);
+        while (true) {
+            for (String str : currSet) {
+                if (isValid(str)) {
+                    ans.add(str);
+                }
+            }
+            if (ans.size() > 0) {
+                return ans;
+            }
+            Set<String> nextSet = new HashSet<String>();
+            for (String str : currSet) {
+                for (int i = 0; i < str.length(); i ++) {
+                    if (i > 0 && str.charAt(i) == str.charAt(i - 1)) {
+                        continue;
+                    }
+                    if (str.charAt(i) == '(' || str.charAt(i) == ')') {
+                        nextSet.add(str.substring(0, i) + str.substring(i + 1));
+                    }
+                }
+            }
+            currSet = nextSet;
         }
-        sum -= deque.size();
-        ans = (sum - cnt) / 2;
-        String str = "";
-        dfs(s, str, 0, 0, 0);
-        List<String> lists = new ArrayList<>();
-        for (String ss : list) {
-            lists.add(ss);
-        }
-        return lists;
     }
 
-    private void dfs(String s, String str, int i, int cntl, int cntr) {
-        if (i == len) {
-            if (cntl == ans && cntl == cntr && str.length() == sum) {
-                list.add(new String(str));
+
+    private boolean isValid(String str) {
+        char[] ss = str.toCharArray();
+        int count = 0;
+
+        for (char c : ss) {
+            if (c == '(') {
+                count++;
+            } else if (c == ')') {
+                count--;
+                if (count < 0) {
+                    return false;
+                }
             }
-            return;
         }
-        if (s.charAt(i) == '(') {
-            dfs(s, str + '(', i + 1, cntl + 1, cntr);
-            dfs(s, str, i + 1, cntl, cntr);
-        } else if (s.charAt(i) == ')') {
-            if (cntr < cntl)
-                dfs(s, str + ')', i + 1, cntl, cntr + 1);
-            dfs(s, str, i + 1, cntl, cntr);
-        } else dfs(s, str + s.charAt(i), i + 1, cntl, cntr);
+
+        return count == 0;
     }
 }
