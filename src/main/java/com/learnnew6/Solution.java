@@ -49,9 +49,8 @@ public class Solution {
         return begin;
     }
 
-    public static void main(String[] args) {
-        int[][] res = new int[][]{{-2, -2, 1, 1}, {2, 2, 4, 6}};
-        Solution solution = new Solution(res);
-        solution.pick();
+    public static void main(String[] args) throws Exception {
+
     }
+
 }

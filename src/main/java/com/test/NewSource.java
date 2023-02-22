@@ -16,4 +16,9 @@ public class NewSource {
     }
 
     public Integer sourceId;
+
+
+    public static void main(String[] args) {
+
+    }
 }
