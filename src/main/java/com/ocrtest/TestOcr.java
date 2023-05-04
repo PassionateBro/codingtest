@@ -22,9 +22,8 @@ public class TestOcr {
         String testImgDir = "D:/cjm/feijiang/ppocr_img/ppocr_img/imgs/";
         String testDir = "C:/Users/caijiamin/Desktop/imag_data/test2/";
 
-        String url = "http://2349.saicmdev.local/ocr/prediction";
 //        String url = "http://10.188.151.246:9998/ocr/prediction";
-//        String url = "http://localhost:8753/driverservice/imageOcrAnalysis";
+        String url = "http://localhost:8753/driverservice/imageOcrAnalysis";
         File folder = new File(testDir);
         File[] listOfFiles = folder.listFiles();
         for (File imgFile : listOfFiles) {
