@@ -22,4 +22,9 @@ public class TreeNode {
         this.left = left;
         this.right = right;
     }
+
+    public static void main(String[] args) {
+        String s=  "性别男民族汉";
+        System.out.println(s.substring(s.indexOf("性别") + 2, s.indexOf("性别") + 3));
+    }
 }
