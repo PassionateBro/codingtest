@@ -24,7 +24,7 @@ import static com.theokanning.openai.service.OpenAiService.*;
  * @Date: 2023-03-09 16:04
  */
 public class ChatGPTTest {
-    private static String apiKey = "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";
+    private static String apiKey = "";
 
     public static void main(String[] args) {
         ObjectMapper mapper = defaultObjectMapper();
