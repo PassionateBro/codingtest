@@ -1,5 +1,10 @@
 package com.test;
 
+import cn.hutool.core.date.DateField;
+import cn.hutool.core.date.DateUtil;
+
+import java.util.Date;
+
 /**
  * @describtion:
  * @author: CaiJm
@@ -19,6 +24,8 @@ public class NewSource {
 
 
     public static void main(String[] args) {
-
+        Date beginTime = DateUtil.offset(DateUtil.beginOfDay(DateUtil.parseDate("2023-11-14")), DateField.HOUR_OF_DAY, 24);
+        System.out.println(beginTime);
+        System.out.println(DateUtil.offset(beginTime, DateField.HOUR_OF_DAY, 24 * 7).toString());
     }
 }
